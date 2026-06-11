@@ -1,7 +1,17 @@
+// Determine API base URL. Defaults to local backend at 127.0.0.1:5000.
+function getApiBase() {
+	const params = new URLSearchParams(window.location.search);
+	const override = params.get('backend');
+	if (override) return override;
+	if (typeof window.__API_BASE__ === 'string' && window.__API_BASE__) return window.__API_BASE__;
+	if (location.protocol === 'file:') return 'http://127.0.0.1:5000';
+	// Default to local backend port 5000 even when served from http server
+	return 'http://127.0.0.1:5000';
+}
 
 
 async function analyzeCase() {
-	const API_BASE = (location.protocol === 'file:') ? 'http://127.0.0.1:5000' : (location.origin || 'http://127.0.0.1:5000');
+	const API_BASE = getApiBase();
 	let text = document.getElementById("caseText").value.trim();
 	let filesInput = document.getElementById("caseFiles");
 	let errorDiv = document.getElementById("inputError");
@@ -64,7 +74,7 @@ async function loadHistory() {
 	const container = document.getElementById("historyContainer");
 	if (!container) return;
 	try {
-		const API_BASE = (location.protocol === 'file:') ? 'http://127.0.0.1:5000' : (location.origin || 'http://127.0.0.1:5000');
+		const API_BASE = getApiBase();
 		const res = await fetch(`${API_BASE}/history`);
 		const history = await res.json();
 		if (history.length === 0) {
@@ -89,7 +99,7 @@ async function loadHistory() {
 }
 
 async function viewAnalysis(item) {
-	const API_BASE = (location.protocol === 'file:') ? 'http://127.0.0.1:5000' : (location.origin || 'http://127.0.0.1:5000');
+	const API_BASE = getApiBase();
 	try {
 		if (item && item.id) {
 			// notify backend that this entry was viewed
@@ -106,7 +116,7 @@ async function viewAnalysis(item) {
 
 async function deleteAnalysis(id) {
 	if (!confirm("Are you sure you want to remove this analysis?")) return;
-	const API_BASE = (location.protocol === 'file:') ? 'http://127.0.0.1:5000' : (location.origin || 'http://127.0.0.1:5000');
+	const API_BASE = getApiBase();
 	await fetch(`${API_BASE}/history/${id}`, { method: "DELETE" });
 	loadHistory();
 }
@@ -214,7 +224,7 @@ async function refineAnalysis() {
 		const formData = new FormData();
 		formData.append('caseText', originalText);
 		formData.append('followUpAnswers', JSON.stringify(answers));
-		const API_BASE = (location.protocol === 'file:') ? 'http://127.0.0.1:5000' : (location.origin || 'http://127.0.0.1:5000');
+		const API_BASE = getApiBase();
 		const response = await fetch(`${API_BASE}/analyze`, { method: 'POST', body: formData });
 		if (!response.ok) {
 			const err = await response.json();
