@@ -1,0 +1,4 @@
+caseText,category,laws_json,defenses_json,reasons_json,followUps_json,notes
+"Someone stole my gold while I was away.",Criminal,"[{""code"": ""IPC 378"", ""desc"": ""Theft""}]","[""Mistaken identity"", ""Alibi""]","{""IPC 378"": ""Property taken without consent (theft).""}","[""Was there forced entry (yes/no)?"", ""Approximate value (low/medium/high)?""]","Example: clear theft"
+"He hit and pushed another person; the victim later died.",Criminal,"[{""code"": ""IPC 302"", ""desc"": ""Murder""}]","[""Self-defence"", ""Provocation""]","{""IPC 302"": ""Death occurred after assault; check intent.""}","[""Was there intent to cause death (yes/no)?""]","Example: possible murder"
+"Someone posted false statements online damaging my business.",Civil,"[{""code"": ""IPC 500"", ""desc"": ""Defamation""}]","[""]","{""IPC 500"": ""False statements causing reputational harm.""}","[""Where was it posted (platform)?""]","Example: defamation"

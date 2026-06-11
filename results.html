@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Case Results</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container mt-5">
+
+<h2 class="text-center">⚖️ Case Analysis Result</h2>
+
+<div class="result-card mt-4">
+<h5>Case Category</h5>
+<span id="caseCategory" class="badge bg-danger">Criminal</span>
+</div>
+
+<div class="result-card">
+<h5>Suggested Laws</h5>
+<ul id="laws">
+<!-- Laws will be populated by JS -->
+</ul>
+</div>
+
+<div class="result-card">
+<h5>Possible Defense Strategies</h5>
+<ul id="defense">
+<!-- Defenses will be populated by JS -->
+</ul>
+</div>
+
+<div class="result-card" id="reasonsCard" style="display:none;">
+<h5>Why these sections?</h5>
+<ul id="reasonsList"></ul>
+</div>
+
+<div class="result-card" id="followUpsCard" style="display:none;">
+<h5>Follow-up Questions</h5>
+<div id="followUps"></div>
+<button class="btn btn-sm btn-primary mt-2" onclick="refineAnalysis()">Refine Analysis</button>
+</div>
+
+<div class="result-card">
+<input type="text" id="searchLaw" class="form-control" placeholder="Search law..." onkeyup="filterLaw()">
+</div>
+
+</div>
+
+<script src="js/script.js"></script>
+<script>populateResults();</script>
+
+</body>
+</html>

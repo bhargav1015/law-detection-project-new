@@ -1,0 +1,11 @@
+flowchart TD
+  A[Frontend (index.html / js/script.js)] -->|POST /analyze| B[Flask API (backend/app.py)]
+  B --> C{Inference Chain}
+  C --> D[TF-IDF Classifier\n(model.joblib)]
+  C --> E[Embeddings k-NN\n(embeddings.npz)]
+  C --> F[Keyword Rules]
+  D --> G[Suggest laws/defenses]
+  E --> G
+  F --> G
+  G --> H[History (backend/history.json)]
+  B --> I[Logs (backend/logs/analysis.log)]
