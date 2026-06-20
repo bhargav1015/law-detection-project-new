@@ -1258,34 +1258,43 @@
     "i": 33,
     "case": "A drunk driver caused a serious road accident.",
     "expected_cat": "Criminal",
-    "got_cat": "Criminal",
-    "cat_match": true,
+    "got_cat": "Traffic Offence",
+    "cat_match": false,
     "expected_laws": [
       "IPC 304A",
       "Motor Vehicles Act"
     ],
     "got_laws": [
-      "Review facts"
+      "IPC 304A",
+      "Motor Vehicles Act"
     ],
-    "law_match": false,
+    "law_match": true,
     "raw_response": {
       "caseText": "A drunk driver caused a serious road accident.",
-      "category": "Criminal",
+      "category": "Traffic Offence",
       "defenses": [
-        "Depends on offence"
+        "No intoxication claim",
+        "Mechanical failure"
       ],
       "files": [],
       "followUpAnswers": null,
-      "followUps": [],
+      "followUps": [
+        "Was the driver tested for alcohol (yes/no)?",
+        "Police FIR filed (yes/no)?"
+      ],
       "id": 36,
       "laws": [
         {
-          "code": "Review facts",
-          "desc": "Classifier indicates criminal matter; check detailed mapping or use embeddings for specifics."
+          "code": "IPC 304A",
+          "desc": "Causing death by negligence"
+        },
+        {
+          "code": "Motor Vehicles Act",
+          "desc": "Traffic offences and penalties"
         }
       ],
       "reasons": {
-        "Review facts": "Classifier returned a broad criminal label; more context required to map to specific IPC sections."
+        "IPC 304A": "Negligent driving causing harm; check for intoxication or reckless behaviour."
       },
       "viewed": false
     }
