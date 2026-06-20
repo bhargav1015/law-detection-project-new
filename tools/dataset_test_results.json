@@ -1,0 +1,1338 @@
+[
+  {
+    "i": 1,
+    "case": "Someone stole my gold while I was away.",
+    "expected_cat": "Criminal",
+    "got_cat": "Criminal",
+    "cat_match": true,
+    "expected_laws": [
+      "IPC 378"
+    ],
+    "got_laws": [
+      "Review facts"
+    ],
+    "law_match": false,
+    "raw_response": {
+      "caseText": "Someone stole my gold while I was away.",
+      "category": "Criminal",
+      "defenses": [
+        "Depends on offence"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [],
+      "id": 8,
+      "laws": [
+        {
+          "code": "Review facts",
+          "desc": "Classifier indicates criminal matter; check detailed mapping or use embeddings for specifics."
+        }
+      ],
+      "reasons": {
+        "Review facts": "Classifier returned a broad criminal label; more context required to map to specific IPC sections."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 2,
+    "case": "He hit and pushed another person; the victim later died.",
+    "expected_cat": "Criminal",
+    "got_cat": "Criminal",
+    "cat_match": true,
+    "expected_laws": [
+      "IPC 302"
+    ],
+    "got_laws": [
+      "Review facts"
+    ],
+    "law_match": false,
+    "raw_response": {
+      "caseText": "He hit and pushed another person; the victim later died.",
+      "category": "Criminal",
+      "defenses": [
+        "Depends on offence"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [],
+      "id": 9,
+      "laws": [
+        {
+          "code": "Review facts",
+          "desc": "Classifier indicates criminal matter; check detailed mapping or use embeddings for specifics."
+        }
+      ],
+      "reasons": {
+        "Review facts": "Classifier returned a broad criminal label; more context required to map to specific IPC sections."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 3,
+    "case": "He hit and pushed another person; the victim later died.",
+    "expected_cat": "Criminal",
+    "got_cat": "Criminal",
+    "cat_match": true,
+    "expected_laws": [
+      "IPC 302",
+      "IPC 304",
+      "IPC 304A"
+    ],
+    "got_laws": [
+      "Review facts"
+    ],
+    "law_match": false,
+    "raw_response": {
+      "caseText": "He hit and pushed another person; the victim later died.",
+      "category": "Criminal",
+      "defenses": [
+        "Depends on offence"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [],
+      "id": 9,
+      "laws": [
+        {
+          "code": "Review facts",
+          "desc": "Classifier indicates criminal matter; check detailed mapping or use embeddings for specifics."
+        }
+      ],
+      "reasons": {
+        "Review facts": "Classifier returned a broad criminal label; more context required to map to specific IPC sections."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 4,
+    "case": "There was a robbery and my phone was stolen from the market.",
+    "expected_cat": "Criminal",
+    "got_cat": "Criminal",
+    "cat_match": true,
+    "expected_laws": [
+      "IPC 390",
+      "IPC 392",
+      "IPC 378"
+    ],
+    "got_laws": [
+      "Review facts"
+    ],
+    "law_match": false,
+    "raw_response": {
+      "caseText": "There was a robbery and my phone was stolen from the market.",
+      "category": "Criminal",
+      "defenses": [
+        "Depends on offence"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [],
+      "id": 2,
+      "laws": [
+        {
+          "code": "Review facts",
+          "desc": "Classifier indicates criminal matter; check detailed mapping or use embeddings for specifics."
+        }
+      ],
+      "reasons": {
+        "Review facts": "Classifier returned a broad criminal label; more context required to map to specific IPC sections."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 5,
+    "case": "A person hacked my bank account and transferred money out of it.",
+    "expected_cat": "Cybercrime",
+    "got_cat": "Cybercrime",
+    "cat_match": true,
+    "expected_laws": [
+      "IT Act Section 66"
+    ],
+    "got_laws": [
+      "IT Act Section 66",
+      "IT Act Section 66C"
+    ],
+    "law_match": true,
+    "raw_response": {
+      "caseText": "A person hacked my bank account and transferred money out of it.",
+      "category": "Cybercrime",
+      "defenses": [
+        "Compromised credentials",
+        "Phishing / SIM swap",
+        "Third-party access"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [
+        "Was there any suspicious message or link (yes/no)?",
+        "Was there an unauthorized transfer (yes/no)?",
+        "Approximate amount taken (none/low/medium/high)?"
+      ],
+      "id": 3,
+      "laws": [
+        {
+          "code": "IT Act Section 66",
+          "desc": "Unauthorized access / hacking"
+        },
+        {
+          "code": "IT Act Section 66C",
+          "desc": "Identity theft / fraud (if applicable)"
+        }
+      ],
+      "reasons": {
+        "IT Act Section 66": "The description indicates unauthorized access to an online account or service."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 6,
+    "case": "Someone gained unauthorized access to my online banking and withdrew funds.",
+    "expected_cat": "Cybercrime",
+    "got_cat": "Cybercrime",
+    "cat_match": true,
+    "expected_laws": [
+      "IT Act Section 66"
+    ],
+    "got_laws": [
+      "IT Act Section 66",
+      "IT Act Section 66C"
+    ],
+    "law_match": true,
+    "raw_response": {
+      "caseText": "Someone gained unauthorized access to my online banking and withdrew funds.",
+      "category": "Cybercrime",
+      "defenses": [
+        "Compromised credentials",
+        "Phishing / SIM swap",
+        "Third-party access"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [
+        "Was there any suspicious message or link (yes/no)?",
+        "Was there an unauthorized transfer (yes/no)?",
+        "Approximate amount taken (none/low/medium/high)?"
+      ],
+      "id": 10,
+      "laws": [
+        {
+          "code": "IT Act Section 66",
+          "desc": "Unauthorized access / hacking"
+        },
+        {
+          "code": "IT Act Section 66C",
+          "desc": "Identity theft / fraud (if applicable)"
+        }
+      ],
+      "reasons": {
+        "IT Act Section 66": "The description indicates unauthorized access to an online account or service."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 7,
+    "case": "My email account was hacked and used to request money from my contacts.",
+    "expected_cat": "Cybercrime",
+    "got_cat": "Cybercrime",
+    "cat_match": true,
+    "expected_laws": [
+      "IT Act Section 66"
+    ],
+    "got_laws": [
+      "IT Act Section 66",
+      "IT Act Section 66C"
+    ],
+    "law_match": true,
+    "raw_response": {
+      "caseText": "My email account was hacked and used to request money from my contacts.",
+      "category": "Cybercrime",
+      "defenses": [
+        "Compromised credentials",
+        "Phishing / SIM swap",
+        "Third-party access"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [
+        "Was there any suspicious message or link (yes/no)?",
+        "Was there an unauthorized transfer (yes/no)?",
+        "Approximate amount taken (none/low/medium/high)?"
+      ],
+      "id": 11,
+      "laws": [
+        {
+          "code": "IT Act Section 66",
+          "desc": "Unauthorized access / hacking"
+        },
+        {
+          "code": "IT Act Section 66C",
+          "desc": "Identity theft / fraud (if applicable)"
+        }
+      ],
+      "reasons": {
+        "IT Act Section 66": "The description indicates unauthorized access to an online account or service."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 8,
+    "case": "A hacker stole money from my internet banking after obtaining my password.",
+    "expected_cat": "Cybercrime",
+    "got_cat": "Cybercrime",
+    "cat_match": true,
+    "expected_laws": [
+      "IT Act Section 66"
+    ],
+    "got_laws": [
+      "IT Act Section 66",
+      "IT Act Section 66C"
+    ],
+    "law_match": true,
+    "raw_response": {
+      "caseText": "A hacker stole money from my internet banking after obtaining my password.",
+      "category": "Cybercrime",
+      "defenses": [
+        "Compromised credentials",
+        "Phishing / SIM swap",
+        "Third-party access"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [
+        "Was there any suspicious message or link (yes/no)?",
+        "Was there an unauthorized transfer (yes/no)?",
+        "Approximate amount taken (none/low/medium/high)?"
+      ],
+      "id": 12,
+      "laws": [
+        {
+          "code": "IT Act Section 66",
+          "desc": "Unauthorized access / hacking"
+        },
+        {
+          "code": "IT Act Section 66C",
+          "desc": "Identity theft / fraud (if applicable)"
+        }
+      ],
+      "reasons": {
+        "IT Act Section 66": "The description indicates unauthorized access to an online account or service."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 9,
+    "case": "My UPI account was compromised and money was withdrawn without my consent.",
+    "expected_cat": "Cybercrime",
+    "got_cat": "Cybercrime",
+    "cat_match": true,
+    "expected_laws": [
+      "IT Act Section 66"
+    ],
+    "got_laws": [
+      "IT Act Section 66",
+      "IT Act Section 66C"
+    ],
+    "law_match": true,
+    "raw_response": {
+      "caseText": "My UPI account was compromised and money was withdrawn without my consent.",
+      "category": "Cybercrime",
+      "defenses": [
+        "Compromised credentials",
+        "Phishing / SIM swap",
+        "Third-party access"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [
+        "Was there any suspicious message or link (yes/no)?",
+        "Was there an unauthorized transfer (yes/no)?",
+        "Approximate amount taken (none/low/medium/high)?"
+      ],
+      "id": 13,
+      "laws": [
+        {
+          "code": "IT Act Section 66",
+          "desc": "Unauthorized access / hacking"
+        },
+        {
+          "code": "IT Act Section 66C",
+          "desc": "Identity theft / fraud (if applicable)"
+        }
+      ],
+      "reasons": {
+        "IT Act Section 66": "The description indicates unauthorized access to an online account or service."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 10,
+    "case": "A person broke into my house and stole my gold jewelry.",
+    "expected_cat": "Criminal",
+    "got_cat": "Criminal",
+    "cat_match": true,
+    "expected_laws": [
+      "IPC 457",
+      "IPC 380",
+      "IPC 378"
+    ],
+    "got_laws": [
+      "Review facts"
+    ],
+    "law_match": false,
+    "raw_response": {
+      "caseText": "A person broke into my house and stole my gold jewelry.",
+      "category": "Criminal",
+      "defenses": [
+        "Depends on offence"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [],
+      "id": 14,
+      "laws": [
+        {
+          "code": "Review facts",
+          "desc": "Classifier indicates criminal matter; check detailed mapping or use embeddings for specifics."
+        }
+      ],
+      "reasons": {
+        "Review facts": "Classifier returned a broad criminal label; more context required to map to specific IPC sections."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 11,
+    "case": "My motorcycle was stolen from the parking area.",
+    "expected_cat": "Criminal",
+    "got_cat": "Criminal",
+    "cat_match": true,
+    "expected_laws": [
+      "IPC 378",
+      "IPC 379"
+    ],
+    "got_laws": [
+      "Review facts"
+    ],
+    "law_match": false,
+    "raw_response": {
+      "caseText": "My motorcycle was stolen from the parking area.",
+      "category": "Criminal",
+      "defenses": [
+        "Depends on offence"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [],
+      "id": 15,
+      "laws": [
+        {
+          "code": "Review facts",
+          "desc": "Classifier indicates criminal matter; check detailed mapping or use embeddings for specifics."
+        }
+      ],
+      "reasons": {
+        "Review facts": "Classifier returned a broad criminal label; more context required to map to specific IPC sections."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 12,
+    "case": "Someone stole my mobile phone while I was traveling on a bus.",
+    "expected_cat": "Criminal",
+    "got_cat": "Criminal",
+    "cat_match": true,
+    "expected_laws": [
+      "IPC 378"
+    ],
+    "got_laws": [
+      "Review facts"
+    ],
+    "law_match": false,
+    "raw_response": {
+      "caseText": "Someone stole my mobile phone while I was traveling on a bus.",
+      "category": "Criminal",
+      "defenses": [
+        "Depends on offence"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [],
+      "id": 16,
+      "laws": [
+        {
+          "code": "Review facts",
+          "desc": "Classifier indicates criminal matter; check detailed mapping or use embeddings for specifics."
+        }
+      ],
+      "reasons": {
+        "Review facts": "Classifier returned a broad criminal label; more context required to map to specific IPC sections."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 13,
+    "case": "A person hacked my bank account and transferred money without my permission.",
+    "expected_cat": "Cybercrime",
+    "got_cat": "Cybercrime",
+    "cat_match": true,
+    "expected_laws": [
+      "IT Act Section 66",
+      "IPC 379"
+    ],
+    "got_laws": [
+      "IT Act Section 66",
+      "IT Act Section 66C"
+    ],
+    "law_match": true,
+    "raw_response": {
+      "caseText": "A person hacked my bank account and transferred money without my permission.",
+      "category": "Cybercrime",
+      "defenses": [
+        "Compromised credentials",
+        "Phishing / SIM swap",
+        "Third-party access"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [
+        "Was there any suspicious message or link (yes/no)?",
+        "Was there an unauthorized transfer (yes/no)?",
+        "Approximate amount taken (none/low/medium/high)?"
+      ],
+      "id": 17,
+      "laws": [
+        {
+          "code": "IT Act Section 66",
+          "desc": "Unauthorized access / hacking"
+        },
+        {
+          "code": "IT Act Section 66C",
+          "desc": "Identity theft / fraud (if applicable)"
+        }
+      ],
+      "reasons": {
+        "IT Act Section 66": "The description indicates unauthorized access to an online account or service."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 14,
+    "case": "Someone gained unauthorized access to my email account and changed the password.",
+    "expected_cat": "Cybercrime",
+    "got_cat": "Cybercrime",
+    "cat_match": true,
+    "expected_laws": [
+      "IT Act Section 66",
+      "IT Act Section 66C"
+    ],
+    "got_laws": [
+      "IT Act Section 66",
+      "IT Act Section 66C"
+    ],
+    "law_match": true,
+    "raw_response": {
+      "caseText": "Someone gained unauthorized access to my email account and changed the password.",
+      "category": "Cybercrime",
+      "defenses": [
+        "Compromised credentials",
+        "Phishing / SIM swap",
+        "Third-party access"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [
+        "Was there any suspicious message or link (yes/no)?",
+        "Was there an unauthorized transfer (yes/no)?",
+        "Approximate amount taken (none/low/medium/high)?"
+      ],
+      "id": 18,
+      "laws": [
+        {
+          "code": "IT Act Section 66",
+          "desc": "Unauthorized access / hacking"
+        },
+        {
+          "code": "IT Act Section 66C",
+          "desc": "Identity theft / fraud (if applicable)"
+        }
+      ],
+      "reasons": {
+        "IT Act Section 66": "The description indicates unauthorized access to an online account or service."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 15,
+    "case": "I received a phishing link and my UPI account was emptied.",
+    "expected_cat": "Cybercrime",
+    "got_cat": "Cybercrime",
+    "cat_match": true,
+    "expected_laws": [
+      "IT Act Section 66",
+      "IPC 420"
+    ],
+    "got_laws": [
+      "IT Act Section 66",
+      "IT Act Section 66C"
+    ],
+    "law_match": true,
+    "raw_response": {
+      "caseText": "I received a phishing link and my UPI account was emptied.",
+      "category": "Cybercrime",
+      "defenses": [
+        "Compromised credentials",
+        "Phishing / SIM swap",
+        "Third-party access"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [
+        "Was there any suspicious message or link (yes/no)?",
+        "Was there an unauthorized transfer (yes/no)?",
+        "Approximate amount taken (none/low/medium/high)?"
+      ],
+      "id": 19,
+      "laws": [
+        {
+          "code": "IT Act Section 66",
+          "desc": "Unauthorized access / hacking"
+        },
+        {
+          "code": "IT Act Section 66C",
+          "desc": "Identity theft / fraud (if applicable)"
+        }
+      ],
+      "reasons": {
+        "IT Act Section 66": "The description indicates unauthorized access to an online account or service."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 16,
+    "case": "A hacker used my social media account to scam my friends.",
+    "expected_cat": "Cybercrime",
+    "got_cat": "Criminal",
+    "cat_match": false,
+    "expected_laws": [
+      "IT Act Section 66D",
+      "IPC 420"
+    ],
+    "got_laws": [
+      "Review facts"
+    ],
+    "law_match": false,
+    "raw_response": {
+      "caseText": "A hacker used my social media account to scam my friends.",
+      "category": "Criminal",
+      "defenses": [
+        "Depends on offence"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [],
+      "id": 20,
+      "laws": [
+        {
+          "code": "Review facts",
+          "desc": "Classifier indicates criminal matter; check detailed mapping or use embeddings for specifics."
+        }
+      ],
+      "reasons": {
+        "Review facts": "Classifier returned a broad criminal label; more context required to map to specific IPC sections."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 17,
+    "case": "A person posted false allegations about me on social media, damaging my reputation.",
+    "expected_cat": "Criminal",
+    "got_cat": "Criminal",
+    "cat_match": true,
+    "expected_laws": [
+      "IPC 500",
+      "Civil - defamation remedy"
+    ],
+    "got_laws": [
+      "Review facts"
+    ],
+    "law_match": false,
+    "raw_response": {
+      "caseText": "A person posted false allegations about me on social media, damaging my reputation.",
+      "category": "Criminal",
+      "defenses": [
+        "Depends on offence"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [],
+      "id": 21,
+      "laws": [
+        {
+          "code": "Review facts",
+          "desc": "Classifier indicates criminal matter; check detailed mapping or use embeddings for specifics."
+        }
+      ],
+      "reasons": {
+        "Review facts": "Classifier returned a broad criminal label; more context required to map to specific IPC sections."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 18,
+    "case": "My colleague spread false rumors that caused me to lose clients.",
+    "expected_cat": "Criminal",
+    "got_cat": "Criminal",
+    "cat_match": true,
+    "expected_laws": [
+      "IPC 500",
+      "Civil - defamation remedy"
+    ],
+    "got_laws": [
+      "Review facts"
+    ],
+    "law_match": false,
+    "raw_response": {
+      "caseText": "My colleague spread false rumors that caused me to lose clients.",
+      "category": "Criminal",
+      "defenses": [
+        "Depends on offence"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [],
+      "id": 22,
+      "laws": [
+        {
+          "code": "Review facts",
+          "desc": "Classifier indicates criminal matter; check detailed mapping or use embeddings for specifics."
+        }
+      ],
+      "reasons": {
+        "Review facts": "Classifier returned a broad criminal label; more context required to map to specific IPC sections."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 19,
+    "case": "My neighbor physically attacked me during an argument.",
+    "expected_cat": "Criminal",
+    "got_cat": "Criminal",
+    "cat_match": true,
+    "expected_laws": [
+      "IPC 323",
+      "IPC 352"
+    ],
+    "got_laws": [
+      "Review facts"
+    ],
+    "law_match": false,
+    "raw_response": {
+      "caseText": "My neighbor physically attacked me during an argument.",
+      "category": "Criminal",
+      "defenses": [
+        "Depends on offence"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [],
+      "id": 23,
+      "laws": [
+        {
+          "code": "Review facts",
+          "desc": "Classifier indicates criminal matter; check detailed mapping or use embeddings for specifics."
+        }
+      ],
+      "reasons": {
+        "Review facts": "Classifier returned a broad criminal label; more context required to map to specific IPC sections."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 20,
+    "case": "A group of people assaulted me and caused serious injuries.",
+    "expected_cat": "Criminal",
+    "got_cat": "Criminal",
+    "cat_match": true,
+    "expected_laws": [
+      "IPC 325",
+      "IPC 34"
+    ],
+    "got_laws": [
+      "Review facts"
+    ],
+    "law_match": false,
+    "raw_response": {
+      "caseText": "A group of people assaulted me and caused serious injuries.",
+      "category": "Criminal",
+      "defenses": [
+        "Depends on offence"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [],
+      "id": 24,
+      "laws": [
+        {
+          "code": "Review facts",
+          "desc": "Classifier indicates criminal matter; check detailed mapping or use embeddings for specifics."
+        }
+      ],
+      "reasons": {
+        "Review facts": "Classifier returned a broad criminal label; more context required to map to specific IPC sections."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 21,
+    "case": "A real estate agent took my money and disappeared without providing the promised property.",
+    "expected_cat": "Criminal",
+    "got_cat": "Criminal",
+    "cat_match": true,
+    "expected_laws": [
+      "IPC 420",
+      "IPC 406"
+    ],
+    "got_laws": [
+      "Review facts"
+    ],
+    "law_match": false,
+    "raw_response": {
+      "caseText": "A real estate agent took my money and disappeared without providing the promised property.",
+      "category": "Criminal",
+      "defenses": [
+        "Depends on offence"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [],
+      "id": 25,
+      "laws": [
+        {
+          "code": "Review facts",
+          "desc": "Classifier indicates criminal matter; check detailed mapping or use embeddings for specifics."
+        }
+      ],
+      "reasons": {
+        "Review facts": "Classifier returned a broad criminal label; more context required to map to specific IPC sections."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 22,
+    "case": "An online seller accepted payment but never delivered the product.",
+    "expected_cat": "Criminal",
+    "got_cat": "Criminal",
+    "cat_match": true,
+    "expected_laws": [
+      "IPC 420"
+    ],
+    "got_laws": [
+      "Review facts"
+    ],
+    "law_match": false,
+    "raw_response": {
+      "caseText": "An online seller accepted payment but never delivered the product.",
+      "category": "Criminal",
+      "defenses": [
+        "Depends on offence"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [],
+      "id": 26,
+      "laws": [
+        {
+          "code": "Review facts",
+          "desc": "Classifier indicates criminal matter; check detailed mapping or use embeddings for specifics."
+        }
+      ],
+      "reasons": {
+        "Review facts": "Classifier returned a broad criminal label; more context required to map to specific IPC sections."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 23,
+    "case": "My spouse has been physically and mentally abusing me for several months.",
+    "expected_cat": "Criminal",
+    "got_cat": "Criminal",
+    "cat_match": true,
+    "expected_laws": [
+      "IPC 498A",
+      "Protection of Women from Domestic Violence Act"
+    ],
+    "got_laws": [
+      "Review facts"
+    ],
+    "law_match": false,
+    "raw_response": {
+      "caseText": "My spouse has been physically and mentally abusing me for several months.",
+      "category": "Criminal",
+      "defenses": [
+        "Depends on offence"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [],
+      "id": 27,
+      "laws": [
+        {
+          "code": "Review facts",
+          "desc": "Classifier indicates criminal matter; check detailed mapping or use embeddings for specifics."
+        }
+      ],
+      "reasons": {
+        "Review facts": "Classifier returned a broad criminal label; more context required to map to specific IPC sections."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 24,
+    "case": "My neighbor illegally occupied a portion of my land and refuses to vacate it.",
+    "expected_cat": "Civil",
+    "got_cat": "Civil",
+    "cat_match": true,
+    "expected_laws": [
+      "Civil suit - Property"
+    ],
+    "got_laws": [
+      "IPC 500"
+    ],
+    "law_match": false,
+    "raw_response": {
+      "caseText": "My neighbor illegally occupied a portion of my land and refuses to vacate it.",
+      "category": "Civil",
+      "defenses": [
+        "Truth as defense",
+        "Privilege",
+        "Fair comment"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [
+        "Do you have documents or title deeds (yes/no)?"
+      ],
+      "id": 6,
+      "laws": [
+        {
+          "code": "IPC 500",
+          "desc": "Defamation"
+        }
+      ],
+      "reasons": {
+        "IPC 500": "Matched default civil mapping."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 25,
+    "case": "Someone forged my signature and transferred ownership of my property.",
+    "expected_cat": "Criminal",
+    "got_cat": "Criminal",
+    "cat_match": true,
+    "expected_laws": [
+      "IPC 467",
+      "IPC 420"
+    ],
+    "got_laws": [
+      "Review facts"
+    ],
+    "law_match": false,
+    "raw_response": {
+      "caseText": "Someone forged my signature and transferred ownership of my property.",
+      "category": "Criminal",
+      "defenses": [
+        "Depends on offence"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [],
+      "id": 28,
+      "laws": [
+        {
+          "code": "Review facts",
+          "desc": "Classifier indicates criminal matter; check detailed mapping or use embeddings for specifics."
+        }
+      ],
+      "reasons": {
+        "Review facts": "Classifier returned a broad criminal label; more context required to map to specific IPC sections."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 26,
+    "case": "A fake investment company collected money from hundreds of people and vanished.",
+    "expected_cat": "Criminal",
+    "got_cat": "Criminal",
+    "cat_match": true,
+    "expected_laws": [
+      "IPC 420",
+      "IPC 406"
+    ],
+    "got_laws": [
+      "Review facts"
+    ],
+    "law_match": false,
+    "raw_response": {
+      "caseText": "A fake investment company collected money from hundreds of people and vanished.",
+      "category": "Criminal",
+      "defenses": [
+        "Depends on offence"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [],
+      "id": 29,
+      "laws": [
+        {
+          "code": "Review facts",
+          "desc": "Classifier indicates criminal matter; check detailed mapping or use embeddings for specifics."
+        }
+      ],
+      "reasons": {
+        "Review facts": "Classifier returned a broad criminal label; more context required to map to specific IPC sections."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 27,
+    "case": "My employer terminated me after I reported corruption in the organization.",
+    "expected_cat": "Labour/Employment",
+    "got_cat": "Criminal",
+    "cat_match": false,
+    "expected_laws": [
+      "Labour law remedy",
+      "Whistleblower protection"
+    ],
+    "got_laws": [
+      "Review facts"
+    ],
+    "law_match": false,
+    "raw_response": {
+      "caseText": "My employer terminated me after I reported corruption in the organization.",
+      "category": "Criminal",
+      "defenses": [
+        "Depends on offence"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [],
+      "id": 30,
+      "laws": [
+        {
+          "code": "Review facts",
+          "desc": "Classifier indicates criminal matter; check detailed mapping or use embeddings for specifics."
+        }
+      ],
+      "reasons": {
+        "Review facts": "Classifier returned a broad criminal label; more context required to map to specific IPC sections."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 28,
+    "case": "A person created a fake profile using my photos and personal information.",
+    "expected_cat": "Cybercrime",
+    "got_cat": "Cybercrime",
+    "cat_match": true,
+    "expected_laws": [
+      "IT Act Section 66C",
+      "IPC 499"
+    ],
+    "got_laws": [
+      "IT Act Section 66",
+      "IT Act Section 66C",
+      "IPC 499/500"
+    ],
+    "law_match": true,
+    "raw_response": {
+      "caseText": "A person created a fake profile using my photos and personal information.",
+      "category": "Cybercrime",
+      "defenses": [
+        "Photos were publicly available or previously shared",
+        "Consent to use images",
+        "Mistaken identity"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [
+        "Which platform is the fake profile on?",
+        "Do you have screenshots or profile links (yes/no)?",
+        "Was the profile used to contact others or request money (yes/no)?",
+        "Any financial loss or reputational harm observed (brief)?"
+      ],
+      "id": 31,
+      "laws": [
+        {
+          "code": "IT Act Section 66",
+          "desc": "Unauthorized access / misuse of data"
+        },
+        {
+          "code": "IT Act Section 66C",
+          "desc": "Identity theft / cheating by impersonation"
+        },
+        {
+          "code": "IPC 499/500",
+          "desc": "Defamation (if false statements made under the profile)"
+        }
+      ],
+      "reasons": {
+        "IT Act Section 66": "Profile created using another person's images/personal data indicates misuse of digital identity.",
+        "IT Act Section 66C": "Impersonation or identity theft-like behavior reported."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 29,
+    "case": "Someone threatened me over the phone and demanded money.",
+    "expected_cat": "Criminal",
+    "got_cat": "Criminal",
+    "cat_match": true,
+    "expected_laws": [
+      "IPC 383",
+      "IPC 387"
+    ],
+    "got_laws": [
+      "Review facts"
+    ],
+    "law_match": false,
+    "raw_response": {
+      "caseText": "Someone threatened me over the phone and demanded money.",
+      "category": "Criminal",
+      "defenses": [
+        "Depends on offence"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [],
+      "id": 32,
+      "laws": [
+        {
+          "code": "Review facts",
+          "desc": "Classifier indicates criminal matter; check detailed mapping or use embeddings for specifics."
+        }
+      ],
+      "reasons": {
+        "Review facts": "Classifier returned a broad criminal label; more context required to map to specific IPC sections."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 30,
+    "case": "My manager repeatedly sent inappropriate messages and made unwanted advances.",
+    "expected_cat": "Sexual Harassment",
+    "got_cat": "Civil",
+    "cat_match": false,
+    "expected_laws": [
+      "POSH Act / IPC 354A"
+    ],
+    "got_laws": [
+      "IPC 500"
+    ],
+    "law_match": false,
+    "raw_response": {
+      "caseText": "My manager repeatedly sent inappropriate messages and made unwanted advances.",
+      "category": "Civil",
+      "defenses": [
+        "Truth as defense",
+        "Privilege",
+        "Fair comment"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [],
+      "id": 33,
+      "laws": [
+        {
+          "code": "IPC 500",
+          "desc": "Defamation"
+        }
+      ],
+      "reasons": {
+        "IPC 500": "Matched default civil mapping."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 31,
+    "case": "A child was taken away without the parents' consent.",
+    "expected_cat": "Criminal",
+    "got_cat": "Criminal",
+    "cat_match": true,
+    "expected_laws": [
+      "IPC 363",
+      "IPC 364"
+    ],
+    "got_laws": [
+      "Review facts"
+    ],
+    "law_match": false,
+    "raw_response": {
+      "caseText": "A child was taken away without the parents' consent.",
+      "category": "Criminal",
+      "defenses": [
+        "Depends on offence"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [],
+      "id": 34,
+      "laws": [
+        {
+          "code": "Review facts",
+          "desc": "Classifier indicates criminal matter; check detailed mapping or use embeddings for specifics."
+        }
+      ],
+      "reasons": {
+        "Review facts": "Classifier returned a broad criminal label; more context required to map to specific IPC sections."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 32,
+    "case": "Police found illegal narcotics in a person's possession.",
+    "expected_cat": "Criminal",
+    "got_cat": "Criminal",
+    "cat_match": true,
+    "expected_laws": [
+      "Narcotic Drugs and Psychotropic Substances Act"
+    ],
+    "got_laws": [
+      "Review facts"
+    ],
+    "law_match": false,
+    "raw_response": {
+      "caseText": "Police found illegal narcotics in a person's possession.",
+      "category": "Criminal",
+      "defenses": [
+        "Depends on offence"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [],
+      "id": 35,
+      "laws": [
+        {
+          "code": "Review facts",
+          "desc": "Classifier indicates criminal matter; check detailed mapping or use embeddings for specifics."
+        }
+      ],
+      "reasons": {
+        "Review facts": "Classifier returned a broad criminal label; more context required to map to specific IPC sections."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 33,
+    "case": "A drunk driver caused a serious road accident.",
+    "expected_cat": "Criminal",
+    "got_cat": "Criminal",
+    "cat_match": true,
+    "expected_laws": [
+      "IPC 304A",
+      "Motor Vehicles Act"
+    ],
+    "got_laws": [
+      "Review facts"
+    ],
+    "law_match": false,
+    "raw_response": {
+      "caseText": "A drunk driver caused a serious road accident.",
+      "category": "Criminal",
+      "defenses": [
+        "Depends on offence"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [],
+      "id": 36,
+      "laws": [
+        {
+          "code": "Review facts",
+          "desc": "Classifier indicates criminal matter; check detailed mapping or use embeddings for specifics."
+        }
+      ],
+      "reasons": {
+        "Review facts": "Classifier returned a broad criminal label; more context required to map to specific IPC sections."
+      },
+      "viewed": false
+    }
+  },
+  {
+    "i": 34,
+    "case": "A surgeon operated on the wrong body part causing harm.",
+    "expected_cat": "Criminal",
+    "got_cat": "Medical Negligence",
+    "cat_match": false,
+    "expected_laws": [
+      "IPC 304A",
+      "Medical Negligence - Civil"
+    ],
+    "got_laws": [
+      "IPC 304A",
+      "Medical Negligence - Civil"
+    ],
+    "law_match": true,
+    "raw_response": {
+      "caseText": "A surgeon operated on the wrong body part causing harm.",
+      "category": "Medical Negligence",
+      "defenses": [
+        "Informed consent claimed",
+        "Unforeseen complication"
+      ],
+      "files": [],
+      "followUpAnswers": null,
+      "followUps": [
+        "Medical records available (yes/no)?",
+        "Any expert opinion obtained (yes/no)?"
+      ],
+      "id": 7,
+      "laws": [
+        {
+          "code": "IPC 304A",
+          "desc": "Causing death by negligence (if death occurred)"
+        },
+        {
+          "code": "Medical Negligence - Civil",
+          "desc": "Civil claim for damages and professional negligence"
+        }
+      ],
+      "reasons": {
+        "Medical Negligence - Civil": "Medical negligence claim; civil remedies may apply; criminal negligence possible depending on harm."
+      },
+      "viewed": false
+    }
+  }
+]
