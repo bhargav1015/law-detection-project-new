@@ -337,37 +337,51 @@ def analyze():
         except Exception as e:
             print('Classifier prediction failed:', e)
 
-    # Post-classifier keyword override: if classifier produced a broad criminal label
-    # but the text clearly indicates impersonation/fake-profile, prefer the
-    # `impersonation` mapping so users get concrete follow-ups/laws.
-    if not used_llm and used_classifier and any(k in text_lower for k in ['fake profile', 'fake account', 'impersonat', 'using my photos', 'using my pictures', 'created a fake profile']):
-        if 'impersonation' in CLASSIFIER_MAPS:
-            mapping = CLASSIFIER_MAPS['impersonation']
+    # Keyword overrides: even when classifier is used, force concrete mappings
+    # for high-signal categories so users get correct IPC sections.
+
+    # Impersonation / fake profile
+    if not used_llm and any(k in text_lower for k in ['fake profile', 'fake account', 'impersonat', 'using my photos', 'using my pictures', 'created a fake profile']):
+        mapping = CLASSIFIER_MAPS.get('impersonation')
+        if mapping:
             category = mapping['category']
             laws = mapping['laws']
             defenses = mapping['defenses']
             reasons = mapping['reasons']
             follow_ups = mapping.get('followUps', [])
 
-    # Post-classifier keyword override: detect medical negligence / wrong-site surgery
-    if not used_llm and used_classifier and any(k in text_lower for k in ['wrong body part', 'wrong site', 'wrong operation', 'operated on wrong', 'surgical error', 'wrong surgery', 'operated on wrong body part', 'retained surgical instrument', 'wrong limb', 'wrong eye']):
-        if 'medical_negligence' in CLASSIFIER_MAPS:
-            mapping = CLASSIFIER_MAPS['medical_negligence']
+    # Murder / killing (must include follow-up questions)
+    if not used_llm and any(k in text_lower for k in ['kill', 'killed', 'murder', 'stabbed', 'shot', 'hacked to death', 'slain']):
+        mapping = CLASSIFIER_MAPS.get('murder')
+        if mapping:
             category = mapping['category']
             laws = mapping['laws']
             defenses = mapping['defenses']
             reasons = mapping['reasons']
             follow_ups = mapping.get('followUps', [])
 
-    # Post-classifier keyword override: detect traffic offences (drunk driving, hit-and-run)
-    if not used_llm and used_classifier and any(k in text_lower for k in ['drunk', 'drunk driver', 'drunk driving', 'road accident', 'hit and run', 'hit-and-run', 'speeding', 'car hit', 'vehicle hit', 'caused a serious road accident', 'caused an accident']):
-        if 'traffic_offence' in CLASSIFIER_MAPS:
-            mapping = CLASSIFIER_MAPS['traffic_offence']
+    # Theft / robbery / burglary
+    if not used_llm and any(k in text_lower for k in ['steal', 'stolen', 'stole', 'theft', 'robbed', 'robbery', 'burglary', 'break in', 'break-in', 'housebreaking', 'missing', 'gold', 'jewellery', 'jewelry', 'silver']):
+        mapping = CLASSIFIER_MAPS.get('theft')
+        if mapping:
             category = mapping['category']
             laws = mapping['laws']
             defenses = mapping['defenses']
             reasons = mapping['reasons']
             follow_ups = mapping.get('followUps', [])
+
+    # Cybercrime / unauthorized access
+    if not used_llm and any(k in text_lower for k in ['hack', 'hacked', 'hacking', 'bank account', 'unauthorized access', 'phishing', 'password', 'account hacked', 'upi', 'transfered', 'transferred']):
+        mapping = CLASSIFIER_MAPS.get('cybercrime')
+        if mapping:
+            category = mapping['category']
+            laws = mapping['laws']
+            defenses = mapping['defenses']
+            reasons = mapping['reasons']
+            follow_ups = mapping.get('followUps', [])
+
+
+
 
     # Semantic embedding fallback (free) if available and no LLM/classifier used
     used_semantic = False
