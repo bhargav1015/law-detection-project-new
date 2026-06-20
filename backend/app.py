@@ -359,6 +359,16 @@ def analyze():
             reasons = mapping['reasons']
             follow_ups = mapping.get('followUps', [])
 
+    # Post-classifier keyword override: detect traffic offences (drunk driving, hit-and-run)
+    if not used_llm and used_classifier and any(k in text_lower for k in ['drunk', 'drunk driver', 'drunk driving', 'road accident', 'hit and run', 'hit-and-run', 'speeding', 'car hit', 'vehicle hit', 'caused a serious road accident', 'caused an accident']):
+        if 'traffic_offence' in CLASSIFIER_MAPS:
+            mapping = CLASSIFIER_MAPS['traffic_offence']
+            category = mapping['category']
+            laws = mapping['laws']
+            defenses = mapping['defenses']
+            reasons = mapping['reasons']
+            follow_ups = mapping.get('followUps', [])
+
     # Semantic embedding fallback (free) if available and no LLM/classifier used
     used_semantic = False
     semantic_info = None
