@@ -33,7 +33,7 @@ emb_threshold = float(_os.environ.get('EMB_THRESHOLD', 0.35))
 # mapping from classifier labels to suggestion bundles
 CLASSIFIER_MAPS = {
     'theft': {
-        'category': 'Criminal',
+        'category': 'Theft',
         'laws': [
             {'code': 'IPC 378', 'desc': 'Theft'},
             {'code': 'IPC 379', 'desc': 'Punishment for theft'},
@@ -55,7 +55,7 @@ CLASSIFIER_MAPS = {
         ]
     },
     'murder': {
-        'category': 'Criminal',
+        'category': 'Homicide',
         'laws': [
             {'code': 'IPC 302', 'desc': 'Murder'},
             {'code': 'IPC 300', 'desc': 'Definition of Murder / Culpable Homicide'},
@@ -77,7 +77,7 @@ CLASSIFIER_MAPS = {
         ]
     },
     'cheating': {
-        'category': 'Criminal',
+        'category': 'Fraud',
         'laws': [
             {'code': 'IPC 420', 'desc': 'Cheating'},
             {'code': 'IPC 406', 'desc': 'Criminal Breach of Trust'},
@@ -95,7 +95,7 @@ CLASSIFIER_MAPS = {
         'followUps': []
     },
     'cybercrime': {
-        'category': 'Criminal',
+        'category': 'Cybercrime',
         'laws': [
             {'code': 'IT Act Section 66', 'desc': 'Computer-related offences / unauthorized access'},
             {'code': 'IT Act Section 66C', 'desc': 'Identity theft / fraud (as applicable)'}
@@ -109,7 +109,7 @@ CLASSIFIER_MAPS = {
         ]
     },
     'impersonation': {
-        'category': 'Criminal',
+        'category': 'Cybercrime',
         'laws': [
             {'code': 'IT Act Section 66', 'desc': 'Unauthorized access / misuse of data'},
             {'code': 'IT Act Section 66C', 'desc': 'Identity theft / cheating by impersonation'},
@@ -128,7 +128,7 @@ CLASSIFIER_MAPS = {
         ]
     },
     'assault': {
-        'category': 'Criminal',
+        'category': 'Assault',
         'laws': [
             {'code': 'IPC 323', 'desc': 'Punishment for voluntarily causing hurt'},
             {'code': 'IPC 352', 'desc': 'Assault or criminal force'}
@@ -138,7 +138,7 @@ CLASSIFIER_MAPS = {
         'followUps': ['Any medical records or photos of injuries (yes/no)?', 'Was the police informed (yes/no)?']
     },
     'domestic_violence': {
-        'category': 'Criminal',
+        'category': 'Domestic Violence',
         'laws': [
             {'code': 'IPC 498A', 'desc': 'Cruelty by husband or relatives'},
             {'code': 'Protection of Women from Domestic Violence Act', 'desc': 'Civil remedy for domestic violence'}
@@ -148,7 +148,7 @@ CLASSIFIER_MAPS = {
         'followUps': ['Any medical records or police complaints (yes/no)?', 'Is there ongoing threat (yes/no)?']
     },
     'kidnapping': {
-        'category': 'Criminal',
+        'category': 'Kidnapping',
         'laws': [
             {'code': 'IPC 363', 'desc': 'Kidnapping'},
             {'code': 'IPC 364', 'desc': 'Kidnapping or abducting with intent to murder'}
@@ -158,35 +158,35 @@ CLASSIFIER_MAPS = {
         'followUps': ['Age of victim?', 'Any witnesses or CCTV?']
     },
     'sexual_harassment': {
-        'category': 'Criminal',
+        'category': 'Sexual Harassment',
         'laws': [{'code': 'POSH Act / IPC 354A', 'desc': 'Sexual harassment at workplace / molestation'}],
         'defenses': ['Consensual interaction disputed', 'False complaint'],
         'reasons': {'POSH Act / IPC 354A': 'Workplace sexual harassment allegations; internal POSH mechanism and criminal remedies may apply.'},
         'followUps': ['Any messages/screenshots available (yes/no)?', 'Was it reported to HR (yes/no)?']
     },
     'drug_offence': {
-        'category': 'Criminal',
+        'category': 'Drug Offence',
         'laws': [{'code': 'NDPS', 'desc': 'Narcotic Drugs and Psychotropic Substances Act'}],
         'defenses': ['Lack of possession', 'Unlawful search'],
         'reasons': {'NDPS': 'Possession or trafficking of controlled substances under NDPS Act.'},
         'followUps': ['Quantity and type of substance?', 'Chain of custody for evidence?']
     },
     'traffic_offence': {
-        'category': 'Criminal',
+        'category': 'Traffic Offence',
         'laws': [{'code': 'IPC 304A', 'desc': 'Causing death by negligence'}, {'code': 'Motor Vehicles Act', 'desc': 'Traffic offences and penalties'}],
         'defenses': ['No intoxication claim', 'Mechanical failure'],
         'reasons': {'IPC 304A': 'Negligent driving causing harm; check for intoxication or reckless behaviour.'},
         'followUps': ['Was the driver tested for alcohol (yes/no)?', 'Police FIR filed (yes/no)?']
     },
     'medical_negligence': {
-        'category': 'Criminal/Civil',
+        'category': 'Medical Negligence',
         'laws': [{'code': 'IPC 304A', 'desc': 'Causing death by negligence (if death occurred)'}, {'code': 'Medical Negligence - Civil', 'desc': 'Civil claim for damages and professional negligence'}],
         'defenses': ['Informed consent claimed', 'Unforeseen complication'],
         'reasons': {'Medical Negligence - Civil': 'Medical negligence claim; civil remedies may apply; criminal negligence possible depending on harm.'},
         'followUps': ['Medical records available (yes/no)?', 'Any expert opinion obtained (yes/no)?']
     },
     'extortion': {
-        'category': 'Criminal',
+        'category': 'Extortion',
         'laws': [
             {'code': 'IPC 383', 'desc': 'Extortion'},
             {'code': 'IPC 387', 'desc': 'Putting a person in fear to commit extortion'}
@@ -221,14 +221,14 @@ CLASSIFIER_MAPS = {
         'followUps': []
     },
     'Corruption': {
-        'category': 'Criminal',
+        'category': 'Corruption',
         'laws': [{'code': 'IPC 171D', 'desc': 'Bribery / corruption related offences (context-specific)'}],
         'defenses': ['Lack of direct evidence'],
         'reasons': {'IPC 171D': 'Allegations of bribery/corruption may require administrative and criminal review.'},
         'followUps': ['Any documents or whistleblower reports (yes/no)?']
     },
     'Negligence': {
-        'category': 'Criminal/Civil',
+        'category': 'Negligence',
         'laws': [{'code': 'IPC 304A', 'desc': 'Causing death by negligence (if death)'}, {'code': 'Civil - negligence', 'desc': 'Civil claim for damages'}],
         'defenses': ['Standard of care dispute', 'Unforeseen complications'],
         'reasons': {'IPC 304A': 'Negligent act causing harm; civil and sometimes criminal remedies apply.'},
@@ -407,7 +407,7 @@ def analyze():
             used_classifier = True
     # Cybercrime / unauthorized access detection (bank hacks, account takeover)
     elif not used_llm and not used_classifier and not used_semantic and any(k in text_lower for k in ['hack', 'hacked', 'hacking', 'bank account', 'unauthorized access', 'phishing', 'password', 'account hacked', 'upi', 'transfered', 'transferred']):
-        category = 'Criminal'
+        category = 'Cybercrime'
         laws = [
             {'code': 'IT Act Section 66', 'desc': 'Unauthorized access / hacking'},
             {'code': 'IT Act Section 66C', 'desc': 'Identity theft / fraud (if applicable)'}
