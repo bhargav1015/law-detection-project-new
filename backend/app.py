@@ -349,6 +349,16 @@ def analyze():
             reasons = mapping['reasons']
             follow_ups = mapping.get('followUps', [])
 
+    # Post-classifier keyword override: detect medical negligence / wrong-site surgery
+    if not used_llm and used_classifier and any(k in text_lower for k in ['wrong body part', 'wrong site', 'wrong operation', 'operated on wrong', 'surgical error', 'wrong surgery', 'operated on wrong body part', 'retained surgical instrument', 'wrong limb', 'wrong eye']):
+        if 'medical_negligence' in CLASSIFIER_MAPS:
+            mapping = CLASSIFIER_MAPS['medical_negligence']
+            category = mapping['category']
+            laws = mapping['laws']
+            defenses = mapping['defenses']
+            reasons = mapping['reasons']
+            follow_ups = mapping.get('followUps', [])
+
     # Semantic embedding fallback (free) if available and no LLM/classifier used
     used_semantic = False
     semantic_info = None
